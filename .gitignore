@@ -1,0 +1,25 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# uv / packaging
+# Keep pyproject.toml for reproducibility
+# Ignore uv cache files
+.uv-cache/
+uv.lock
+
+# Logs & debug
+*.log
+*.out
+*.err
+
+# IDE settings
+.idea/
