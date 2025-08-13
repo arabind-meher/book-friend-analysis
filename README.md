@@ -56,7 +56,6 @@ book-friend-analysis/
 │  ├─ review_summarizer.py          # Functions for review summarization
 │  └─ sentiment_analysis.py         # Functions for sentiment scoring
 │
-├─ main.py                          # Entry point for orchestrating workflows
 ├─ pyproject.toml                   # Project dependencies and metadata
 └─ requirements.txt                 # Alternative dependency list
 ```
@@ -146,9 +145,23 @@ summary = summarizer.summarize_one(["I loved the plot.", "Characters were amazin
 3. **Configure environment**
    Create a `.env` file in the repo root:
    ```env
-   MONGODB_URI=mongodb://localhost:27017
-   MONGO_DB_NAME=book_friend
-   POSTGRES_URI=postgresql://user:password@localhost:5432/book_friend
+   # MongoDB connection
+   MONGO_URI=mongodb://localhost
+   MONGO_PORT=27017
+   MONGO_DB=<database>
+   
+   # MongoDB collections
+   MONGO_COLLECTION_METADATA_RAW=metadata_raw
+   MONGO_COLLECTION_METADATA_CLEAN=metadata_clean
+   MONGO_COLLECTION_REVIEWS_RAW=reviews_raw
+   MONGO_COLLECTION_REVIEWS_CLEAN=reviews_clean
+   MONGO_COLLECTION_USERS_RATING=users_rating
+   MONGO_COLLECTION_SENTIMENT_SCORES=sentiment_scores
+   MONGO_COLLECTION_SUMMARIZED_REVIEWS=summarized_reviews
+   
+   # PostgreSQL connection
+   POSTGRES_URL=postgresql://<user>:<password>@localhost:5432/<database>
+   POSTGRES_SCHEMA=<database>
    ```
 
 ---
